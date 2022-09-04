@@ -1,0 +1,43 @@
+﻿@page
+@model Am.Pages.MovieListModel
+@{
+	ViewData["Title"] ="Movie List";
+}
+<br />
+<h3>List of Movies</h3>
+<table class="table">
+<thead>
+	<tr>
+		<th>S.No</th>
+		<th>Movie Name</th>
+		<th>Released Year</th>
+		<th>Movie Description</th>
+		<th>Actors</th>
+		<th>Genre</th>
+		<th>Actions</th>	
+	</tr>
+</thead>
+	
+<tbody>
+	@foreach(var item in @Model.lstMovie)
+	{
+		<tr>
+			<td>@item.Sno</td>
+			<td>@item.MovieName</td>
+			<td>@item.MovieYear</td>
+			<td>@item.MovieDescription</td>
+			<td>@item.Actors</td>
+			<td>@item.Genre</td>
+			<td>
+					<a asp-page="EditMovie" asp-route-id=@item.Sno>Edit</a>
+				<a asp-page-handler="Delete" asp-route-id=@item.Sno>Delete</a>
+			</td>
+
+		</tr>
+			
+	}
+
+
+</tbody>
+</table>
+<a class='btn btn-primary btn-sm'href='/AddMovie'>Add More</a>

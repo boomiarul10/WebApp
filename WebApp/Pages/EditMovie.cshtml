@@ -1,0 +1,28 @@
+﻿@page
+@model WebApp.Pages.EditMovieModel
+@{
+	ViewData["Title"] = "Edit Movie";
+}
+
+<h3>Edit a Movie</h3>
+<div>
+	
+	<form method="post">
+
+		<label for="Sno">Sno: </label> <input type="text" readonly id="txtSno" name="Sno" value="@Model.Sno" /><br />
+		
+		<label for="movieName">MovieName: </label> <input type="text" id="txtMovieName" name="MovieName" value="@Model.movieName" /><br />
+
+		<label for="movieYear">MovieYear: </label> <input type="text" id="txtMovieYear" name="MovieYear" value="@Model.movieYear" /><br />
+
+		<label for="movieDescription">MovieDescription: </label> <textarea name="MovieDescription" id="txtMovieDescription" >@Model.movieDescription</textarea><br />
+
+		<label for="actors">Actors: <label></label> </label> <input type="text" id="actors" name="Actors" value="@Model.actors" /><br />
+
+		<label for="genre">Genre:</label> <input type="text" id="txtGenre" name="Genre" value="@Model.genre" /><br />
+
+		<input type="submit" value="SAVE" />         <input type="submit" value="Cancel" asp-page-handler="Clear" />
+
+	</form>
+
+</div>

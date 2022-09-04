@@ -1,0 +1,26 @@
+﻿@page
+@model Am.Pages.AddMovieModel
+@{
+	ViewData["Title"] = "Add Movie";
+}
+<h3>Add a Movie</h3>
+<div>
+	
+	<form method="post">
+		
+		<label for="movieName">MovieName: </label> <input type="text" id="txtMovieName" name="MovieName" value="@Model.movieName" /><br />
+
+		<label for="movieYear">MovieYear: </label> <input type="text" id="txtMovieYear" name="MovieYear" value="@Model.movieYear" /><br />
+
+		<label for="movieDescription">MovieDescription: </label> <textarea name="MovieDescription" id="txtMovieDescription" >@Model.movieDescription</textarea><br />
+
+		<label for="actors">Actors: <label></label> </label> <input type="text" id="actors" name="Actors" value="@Model.actors" /><br />
+
+		<label for="genre">Genre:</label> <input type="text" id="txtGenre" name="Genre" value="@Model.genre" /><br />
+
+		<input type="submit" value="SUBMIT" />         <input type="submit" value="Cancel" asp-page-handler="Clear" />
+
+
+	</form>
+
+</div>
